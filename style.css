@@ -24,8 +24,8 @@ h1 {
 }
 
 .container {
-  height: 80vw;
-  width: 80vw;
+  height: 80vmin;
+  width: 80vmin;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
