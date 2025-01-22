@@ -1,12 +1,25 @@
 const container = document.querySelector(".container");
 const shuffleButton = document.getElementById("shuffleButton");
 const movesDisplay = document.getElementById("moves");
+const minElement = document.getElementById('min');
+const secElement = document.getElementById('sec');
+let seconds = 0;
 let moves = 0;
 let tiles = [];
+let start = false;
 
 // Add click event listener for shuffle button
 shuffleButton.addEventListener('click', () => {
+  clearInterval(gameTimer)
+  seconds=0;
+    sec = seconds % 60;
+    minutes = parseInt(seconds / 60);
+  secElement.innerHTML = sec;
+  minElement.innerHTML = minutes;
   suffleTilesArray(tiles);
+  
+
+  start = false;
 });
 
 // Initial tile creation and shuffling
@@ -28,7 +41,7 @@ function printTiles(tiles) {
   tiles.forEach((element, index) => {
     let tile = document.createElement('div');
     tile.textContent = element !== 0 ? element : ''; 
-    if(tile.innerText!=''){
+    if (tile.innerText != '') {
       tile.classList.add('tile');
     }
     tile.setAttribute('data-index', index); 
@@ -53,13 +66,19 @@ function suffleTilesArray(tiles) {
 
 // Move function
 function move(tileValue, tileIndex) {
+  if (!start) {
+    timer();
+    start = true;
+  }
   const emptyIndex = tiles.indexOf(0);
-  if(isAdjacent(tileIndex, emptyIndex)) {
+  if (isAdjacent(tileIndex, emptyIndex)) {
     tiles[emptyIndex] = tileValue;
     tiles[tileIndex] = 0;
     moves++;
     printTiles(tiles);
-    if(checkWin(tiles)){
+    if (checkWin(tiles)) {
+      updateRecordDisplay(seconds);
+      clearInterval(gameTimer);
       alert(`congrate...you have won this match by ${moves} moves `);
     }
   }
@@ -80,15 +99,49 @@ function isAdjacent(tileIndex, emptyIndex) {
   return isAdjacent;
 }
 
-//win
-function checkWin(tiles){
-  for(let i=0;i<=24;i++){
-    if(i==24){
-      return true 
-    }else{
-      if(tiles[i]!=i+1){
-        return false
+// Win
+function checkWin(tiles) {
+  for (let i = 0; i <= 24; i++) {
+    if (i == 24) {
+      return true;
+    } else {
+      if (tiles[i] != i + 1) {
+        return false;
       }
     }
+  }
+}
+
+// Add time functionality
+function timer() {
+  gameTimer = setInterval(() => {
+    seconds++;
+    const sec = seconds % 60;
+    const minutes = Math.floor(seconds / 60);
+    secElement.innerHTML = sec;
+    minElement.innerHTML = minutes;
+
+    // Check and update the lowest recorded time
+    const recordedTime = localStorage.getItem('recordedTime') ? parseInt(localStorage.getItem('recordedTime')) : Infinity;
+
+    if (seconds < recordedTime) {
+      localStorage.setItem('recordedTime', seconds);
+      updateRecordDisplay(seconds);
+    }
+  }, 1000);
+}
+
+// Function to display the recorded time in the "Record" section
+function updateRecordDisplay(timeInSeconds) {
+  const recordMinutes = Math.floor(timeInSeconds / 60);
+  const recordSeconds = timeInSeconds % 60;
+
+  // Update the "Record" section in the HTML
+  const recordDisplay = document.querySelector('.game-container div:last-child');
+  if (recordDisplay) {
+    recordDisplay.innerHTML = `
+      <p>Record:</p>
+      <span>${recordMinutes}</span> Min <span>${recordSeconds}</span> Sec
+    `;
   }
 }

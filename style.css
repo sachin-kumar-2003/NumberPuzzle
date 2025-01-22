@@ -16,25 +16,31 @@ body {
 
 .game-container {
   text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  max-width: 90%;
+  width: 400px; /* Default for larger devices */
 }
 
-h1 {
+h1, h3 {
   margin-bottom: 20px;
   color: #333;
 }
 
 .container {
-  height: 75vmin;
-  width: 80vmin;
+  width: 100%; /* Scales with the game container */
+  aspect-ratio: 1; /* Keeps the grid square */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 5px;
-  margin:auto;
+  margin: 20px auto;
   background-color: #333;
   padding: 5px;
-  border-radius: 5px;
-  border: 10px solid #ab9595;
+  border-radius: 10px;
+  border: 5px solid #ab9595;
 }
 
 .tile {
@@ -42,7 +48,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 1.2rem; /* Scales based on screen size */
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -60,12 +66,13 @@ h1 {
 button {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -74,5 +81,58 @@ button:hover {
 
 #moves {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .game-container {
+    width: 95%; /* Expand to fill more of the screen on smaller devices */
+  }
+
+  .container {
+    gap: 3px; /* Reduce gaps between tiles for smaller screens */
+  }
+
+  .tile {
+    font-size: 1rem; /* Slightly smaller text on smaller screens */
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px; /* Adjust button size for smaller screens */
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    width: 100%;
+    padding: 10px; /* Add padding for smaller screens */
+  }
+
+  .container {
+    gap: 2px; /* Further reduce gaps for very small screens */
+  }
+
+  .tile {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
 }
