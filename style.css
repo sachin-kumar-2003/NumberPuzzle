@@ -16,7 +16,7 @@ body {
 
 .game-container {
   width: min(90vw, 400px);
-  height: auto;
+  height: 90%;
   text-align: center;
   padding: 5%;
   background-color: #ffffff;
