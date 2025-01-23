@@ -15,31 +15,31 @@ body {
 }
 
 .game-container {
-  height:100vmin;
+  height: min(90vmin, 90%);
   text-align: center;
-  padding: 20px;
+  padding: 5%;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   max-width: 90%;
-  width: 400px; /* Default for larger devices */
+  width: min(400px, 90%);
 }
 
 h1, h3 {
-  margin-bottom: 20px;
+  margin-bottom: 5%;
   color: #333;
 }
 
 .container {
-  height:60vmin;
-  width: 100%; 
+  height: min(60vmin, 70%);
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 5px;
-  margin: 20px auto;
+  gap: 1%;
+  margin: 5% auto;
   background-color: #333;
-  padding: 5px;
+  padding: 1%;
   border-radius: 10px;
   border: 5px solid #ab9595;
 }
@@ -49,7 +49,7 @@ h1, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem; /* Scales based on screen size */
+  font-size: min(1.5rem, 5%);
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -65,9 +65,9 @@ h1, h3 {
 }
 
 button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  margin-top: 5%;
+  padding: 3% 6%;
+  font-size: min(1.2rem, 4%);
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -81,11 +81,11 @@ button:hover {
 }
 
 #moves {
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 3%;
+  font-size: min(1rem, 3%);
 }
 
 p {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: min(1rem, 3%);
+  margin-bottom: 2%;
 }
