@@ -15,14 +15,13 @@ body {
 }
 
 .game-container {
-  height: min(90vmin, 90%);
+  width: min(90vw, 400px);
+  height: auto;
   text-align: center;
   padding: 5%;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  max-width: 90%;
-  width: min(400px, 90%);
 }
 
 h1, h3 {
@@ -31,8 +30,9 @@ h1, h3 {
 }
 
 .container {
-  height: max(90vmin, 90%);
   width: 100%;
+  height: auto;
+  aspect-ratio: 1; /* Ensures the container maintains a square shape */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -49,7 +49,7 @@ h1, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: min(1.5rem, 5%);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -66,8 +66,8 @@ h1, h3 {
 
 button {
   margin-top: 5%;
-  padding: 3% 6%;
-  font-size: min(1.2rem, 4%);
+  padding: 10px 20px;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -82,10 +82,10 @@ button:hover {
 
 #moves {
   margin-top: 3%;
-  font-size: min(1rem, 3%);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
 p {
-  font-size: min(1rem, 3%);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
   margin-bottom: 2%;
 }
