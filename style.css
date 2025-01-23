@@ -15,6 +15,7 @@ body {
 }
 
 .game-container {
+  height:100vmin;
   text-align: center;
   padding: 20px;
   background-color: #ffffff;
@@ -30,7 +31,8 @@ h1, h3 {
 }
 
 .container {
-  width: 100%; /* Scales with the game container */
+  height:60vmin;
+  width: 100%; 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
