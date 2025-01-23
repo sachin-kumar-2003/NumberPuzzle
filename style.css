@@ -31,7 +31,7 @@ h1, h3 {
 }
 
 .container {
-  height: max(70vmin, 80%);
+  height: max(90vmin, 90%);
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
