@@ -30,18 +30,21 @@ h1, h3 {
 }
 
 .container {
-  width: 100%;
-  aspect-ratio: 1; 
+  width: 90%; /* Reduced width for better responsiveness */
+  aspect-ratio: 1; /* Maintains a square layout */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 1%;
+  gap: 1rem; /* Changed to rem for consistent spacing */
   margin: 5% auto;
-  background-color: #333;
-  padding: 1%;
-  border-radius: 10px;
-  border: 5px solid #ab9595;
+  padding: 1rem; /* Changed to rem for consistent spacing */
+  background-color: #333; /* Dark background for contrast */
+  border-radius: 10px; /* Smooth rounded corners */
+  border: 4px solid #ab9595; /* Slightly reduced border thickness */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
+  overflow: hidden; /* Prevents content overflow */
 }
+
 
 .tile {
   background-color: #fff;
