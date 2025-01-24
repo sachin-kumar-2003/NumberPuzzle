@@ -31,8 +31,7 @@ h1, h3 {
 
 .container {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1; /* Ensures the container maintains a square shape */
+  aspect-ratio: 1; 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
