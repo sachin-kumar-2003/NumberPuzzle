@@ -4,7 +4,7 @@ This is a simple number puzzle game built with HTML, CSS, and JavaScript. The go
 
 ## Demo
 
-https://sachin-kumar-2003.github.io/NumberPuzzle/
+[https://sachin-kumar-2003.github.io/NumberPuzzle/](https://number-puzzle-rust.vercel.app/)
 
 ## Features
 

@@ -15,40 +15,43 @@ body {
 }
 
 .game-container {
+  width: min(90vw, 400px);
+  height: 90%;
   text-align: center;
-  padding: 20px;
+  padding: 5%;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  max-width: 90%;
-  width: 400px; /* Default for larger devices */
 }
 
 h1, h3 {
-  margin-bottom: 20px;
+  margin-bottom: 5%;
   color: #333;
 }
 
 .container {
-  width: 100%; 
-  aspect-ratio: 1;
+  width: 100%; /* Scales with the game container */
+  aspect-ratio: 1; /* Keeps the grid square */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 5px;
-  margin: 20px auto;
-  background-color: #333;
+  margin: 5% auto;
   padding: 5px;
-  border-radius: 10px;
-  border: 5px solid #ab9595;
+  background-color: #333;
+  border-radius: 10px; 
+  border: 4px solid #ab9595; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  overflow: hidden; 
 }
+
 
 .tile {
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem; /* Scales based on screen size */
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -64,9 +67,9 @@ h1, h3 {
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 5%;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -80,59 +83,11 @@ button:hover {
 }
 
 #moves {
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 3%;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
 p {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .game-container {
-    width: 95%; /* Expand to fill more of the screen on smaller devices */
-  }
-
-  .container {
-    gap: 3px; /* Reduce gaps between tiles for smaller screens */
-  }
-
-  .tile {
-    font-size: 1rem; /* Slightly smaller text on smaller screens */
-  }
-
-  button {
-    font-size: 0.9rem;
-    padding: 8px 16px; /* Adjust button size for smaller screens */
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .game-container {
-    width: 100%;
-    padding: 10px; /* Add padding for smaller screens */
-  }
-
-  .container {
-    gap: 2px; /* Further reduce gaps for very small screens */
-  }
-
-  .tile {
-    font-size: 0.8rem;
-  }
-
-  button {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  p {
-    font-size: 0.8rem;
-  }
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  margin-bottom: 2%;
 }
