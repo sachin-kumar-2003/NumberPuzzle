@@ -30,8 +30,8 @@ h1, h3 {
 }
 
 .container {
-  width: 100%; /* Scales with the game container */
-  aspect-ratio: 1; /* Keeps the grid square */
+  width: 100%; 
+  aspect-ratio: 1; 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
